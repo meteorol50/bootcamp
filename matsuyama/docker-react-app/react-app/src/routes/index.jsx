@@ -1,18 +1,22 @@
 import { useRoutes } from 'react-router-dom';
 
 import * as React from 'react';
-import { Landing } from '../features/misc';
+import { lazyImport } from 'utils/lazyImport';
+import { Login } from 'features/auth';
 
-// import { protectedRoutes } from './protected';
-import { publicRoutes } from './public';
+const { MiscRoutes } = lazyImport(() => import('features/misc'), 'MiscRoutes');
+
+export const miscRoutes = [
+  {
+    path: '/misc/*',
+    element: <div><MiscRoutes /></div>,
+  },
+];
 
 export function AppRoutes() {
-  const commonRoutes = [{ path: '/', element: <div><Landing /></div> }];
+  const commonRoutes = [{ path: '/', element: <div><Login /></div> }];
 
-  // const routes = auth.user ? protectedRoutes : publicRoutes;
-  const routes = publicRoutes;
-
-  const element = useRoutes([...routes, ...commonRoutes]);
+  const element = useRoutes([...miscRoutes, ...commonRoutes]);
 
   return <div>{element}</div>;
 }

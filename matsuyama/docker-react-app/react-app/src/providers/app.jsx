@@ -4,8 +4,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Button from '@mui/material/Button';
 
-// import Notifications from 'components/Notifications/Notifications';
-
 import PropTypes from 'prop-types';
 
 function ErrorFallback() {
@@ -26,19 +24,10 @@ export function AppProvider(props) {
   const { children } = props;
 
   return (
-    <React.Suspense
-      fallback={(
-        <div className="flex items-center justify-center w-screen h-screen">
-          {/* <Spinner size="xl" /> */}
-        </div>
-      )}
-    >
+    <React.Suspense fallback="loading...">
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <HelmetProvider>
-          {/* <Notifications />
-      {/* <AuthProvider> */}
           <Router>{children}</Router>
-          {/* </AuthProvider> */}
         </HelmetProvider>
       </ErrorBoundary>
     </React.Suspense>
