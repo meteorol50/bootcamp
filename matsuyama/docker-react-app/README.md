@@ -9,5 +9,7 @@ https://docs.docker.com/docker-for-windows/install/
 
 2. docker-react-appのソースコードをコピーする  
 
-3. docker-compose up コマンドで実行  
+3. docker-compose build コマンドを実行する
+
+4. docker-compose up コマンドを実行する  
 コンテナを起動し、npm startします。
