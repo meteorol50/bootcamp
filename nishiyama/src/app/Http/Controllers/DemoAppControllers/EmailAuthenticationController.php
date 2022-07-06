@@ -23,6 +23,6 @@ class EmailAuthenticationController extends Controller
         $email_authentication->save();
 
         return redirect()
-            ->route('email_authentications.create');
+            ->route('/');
     }
 }
