@@ -11,15 +11,19 @@
             <h1>Uzone会員登録</h1>
         </header>
         <div class="container">
-            <h2>メールアドレス入力</h2>
-            <p>メールアドレスを入力してください。入力していただいたメールアドレス宛に、6桁の認証コードを送信します。</p>
-            <form method="post" action="{{ route('email_authentications.store') }}">
+            <h2>メール認証</h2>
+            <p>6桁の認証コードを入力してください。</p>
+            <form method="post" action="{{ route('email_authentications.authenticate') }}">
                 @csrf
                 <label>
                     メールアドレス
                     <input type="email" name="email">
                 </label>
-                <button>送信</button>
+                <label>
+                    認証コード
+                    <input type="text" name="auth_code">
+                </label>
+                <button>認証</button>
             </form>
         </div>
     </body>
