@@ -103,5 +103,8 @@
 
 use App\Http\Controllers\DemoAppControllers\EmailAuthenticationController;
 
-Route::post('/email_store', [EmailAuthenticationController::class, 'store'])
+Route::post('/registration/store', [EmailAuthenticationController::class, 'store'])
     ->name('email_authentications.store');
+
+Route::post('/authentication/verify', [EmailAuthenticationController::class, 'authenticate'])
+    ->name('email_authentications.authenticate');

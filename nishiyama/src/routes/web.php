@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DemoAppControllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/registration', function () {
-    return view('DemoAppViews/registration');
-});
+Route::get('/registration', [UserController::class, 'create'])
+    ->name('email_authentications.create');
+
+Route::get('/authentication', [UserController::class, 'input_code'])
+    ->name('email_authentications.input_code');
+
+Route::get('/completion', [UserController::class, 'complete'])
+    ->name('email_authentications.complete');
