@@ -9,7 +9,7 @@ class EmailAuthentication extends Model
 {
     // use HasFactory;
 
-    protected $table = 'email_authentication';
+    protected $table = 'email_authentications';
 
     protected $fillable = [
         'email',
