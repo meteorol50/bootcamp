@@ -102,9 +102,16 @@
 // });
 
 use App\Http\Controllers\DemoAppControllers\EmailAuthenticationController;
+use App\Http\Controllers\DemoAppControllers\UserController;
 
-Route::post('/registration/store', [EmailAuthenticationController::class, 'store'])
+// 会員登録API
+Route::post('/registration/store', [UserController::class, 'store'])
     ->name('email_authentications.store');
 
+// メール認証のコード送信API
+Route::post('/registration/send_auth_code', [EmailAuthenticationController::class, 'sendAuthCode'])
+    ->name('email_authentications.sendAuthCode');
+
+// メール認証API
 Route::post('/authentication/verify', [EmailAuthenticationController::class, 'authenticate'])
     ->name('email_authentications.authenticate');

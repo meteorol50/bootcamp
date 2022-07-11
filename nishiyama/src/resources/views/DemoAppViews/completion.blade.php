@@ -12,6 +12,7 @@
         </header>
         <div class="container">
             <h2>メール認証が完了しました</h2>
+            <h2>会員登録が完了しました！</h2>
         </div>
     </body>
 </html>

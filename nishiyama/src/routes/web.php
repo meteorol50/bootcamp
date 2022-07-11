@@ -21,8 +21,8 @@ Route::get('/', function () {
 Route::get('/registration', [UserController::class, 'create'])
     ->name('email_authentications.create');
 
-Route::get('/authentication', [UserController::class, 'input_code'])
-    ->name('email_authentications.input_code');
+Route::get('/authentication', [UserController::class, 'inputCode'])
+    ->name('email_authentications.inputCode');
 
 Route::get('/completion', [UserController::class, 'complete'])
     ->name('email_authentications.complete');
