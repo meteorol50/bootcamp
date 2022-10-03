@@ -1,0 +1,20 @@
+.basicInfoInput {
+    text-align: left;
+    /* width: auto; */
+    /* background-color: aqua; */
+}
+
+.nameInput {
+    margin: 50px 0 0 50px;
+    /* padding: auto; */
+}
+
+.mailInput {
+    margin: 20px 0 0 50px;
+    /* padding: auto; */
+}
+
+.telInput {
+    margin: 20px 0 20px 50px;
+}
+
