@@ -5,6 +5,8 @@ import React from 'react';
 import InputBasicInfo from './components/InputBasicInfo';
 import UserSelect from './components/UserSelect';
 import UserStatus from './components/UserStatus';
+import TableHeader from './components/TableHeader';
+import TableContent from './components/TableContent';
 
 import "./App.css";
 
@@ -15,7 +17,9 @@ const App = () => {
       <div className='BasicInfo'>
       <InputBasicInfo />
       </div>
-      <div className='User'>
+      <div className='BasicTable'>
+        {/* <BasicTable /> */}
+        <TableContent />
       </div>
     </div>
     
