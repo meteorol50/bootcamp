@@ -4,7 +4,6 @@ import CheckForm from "./CheckForm";
 
 function Sidebar({setValue}) {
 const { control,handleSubmit } = useForm({
-    mode:"onSubmit",
     //フォームの初期値
     defaultValues: { name: '寺田心',email:"bookOffnanoniHonNeJan@gmail.com",tel:"080-1237-2124" }
 })
@@ -26,18 +25,17 @@ const validationRules = {
     }
 }
 
-// const getValue = () => {
-//     // 引数を設定しない場合は、すべてのフィールド情報を取得
-//     const values = getValues();
-//     console.log(values);
-//   };
   //コンソールにフォームの値を表示
 const onSubmit = (data) => {
     Object.values(data).forEach((value) => console.log(value));
     setValue(data.name);
 }
   //テキストフィールドの設定の連想配列
-const array = [{english:"name",japanese:"名前"},{english:"email",japanese:"メールアドレス"},{english:"tel",japanese:"電話番号"}];
+const array = [
+    {english:"name",japanese:"名前"},
+    {english:"email",japanese:"メールアドレス"},
+    {english:"tel",japanese:"電話番号"}
+];
   //テキストフィールドの配列
 const Texts = array.map((value) =><Controller
     name={value.english}
@@ -59,8 +57,12 @@ const Texts = array.map((value) =><Controller
     onSubmit={handleSubmit(onSubmit)} 
     spacing={2} sx={{ m: 2, width: '25ch' ,padding:4}}>
             {Texts}
-            <CheckForm title={"ユーザー区分"} label={[{name:"法人",default:true},{name:"個人事業主",default:false},{name:"個人",default:true}]}></CheckForm>
-            <CheckForm title={"ステータス"} label={[{name:"利用停止",default:false},{name:"有効",default:true},{name:"メール認証中",default:false}]}></CheckForm>
+            <CheckForm 
+            title={"ユーザー区分"} 
+            label={[{name:"法人",default:true},{name:"個人事業主",default:false},{name:"個人",default:true}]} />
+            <CheckForm 
+            title={"ステータス"} 
+            label={[{name:"利用停止",default:false},{name:"有効",default:true},{name:"メール認証中",default:false}]} />
             <Button variant="contained" type="submit" color='success'>検索</Button>
     </Stack>
 );
