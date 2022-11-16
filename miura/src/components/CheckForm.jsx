@@ -1,4 +1,4 @@
-import {Checkbox,FormControlLabel,FormGroup} from '@mui/material';
+import { Checkbox,FormControlLabel,FormGroup } from '@mui/material';
 
 function CheckForm({title,label}) {
   //チェックボックスの配列
